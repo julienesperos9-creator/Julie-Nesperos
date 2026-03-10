@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RNHS Student Portal - Julie Ann Marie M. Nesperos</title>
+<style>
+body, html{
+  margin:0;
+  padding:0;
+  font-family: Arial, sans-serif;
+  background:#eef2f5;
+}
+
+/* LOGIN */
+#loginPage{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  background: linear-gradient(to right, #144272, #1a4571);
+}
+
+.authBox{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  width:350px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+  text-align:center;
+}
+
+.authBox input{
+  width:90%;
+  padding:10px;
+  margin:10px 0;
+  border-radius:5px;
+  border:1px solid #ccc;
+}
+
+.authBox button{
+  padding:10px 25px;
+  border:none;
+  background:#CF9FFF;
+  color:#AD9BC0white;
+  font-weight:bold;
+  cursor:pointer;
+  border-radius:5px;
+}
+
+/* NAVIGATION */
+nav{
+  background:#FF9D9D;
+  text-align:center;
+  padding:10px;
+}
+
+nav button{
+  background:none;
+  border:none;
+  color:#6DB4A2white;
+  font-size:16px;
+  margin:0 12px;
+  cursor:pointer;
+}
+
+nav button:hover{
+  color:#F194C3yellow;
+}
+
+/* LOGOUT */
+#logoutBtn{
+  background:#c0392b;
+  border:none;
+  color:white;
+  padding:5px 12px;
+  border-radius:5px;
+  cursor:pointer;
+  float:right;
+  margin:5px 15px;
+}
+
+/* SECTIONS */
+section{
+  display:none;
+  padding:50px 20px;
+  text-align:center;
+}
+
+section.active{
+  display:block;
+}
+
+.card{
+  background:white;
+  max-width:900px;
+  margin:auto;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* HERO IMAGE */
+.hero img{
+  width:200px;
+  border-radius:00%;
+  margin-bottom:15px;
+}
+
+/* STRANDS */
+.strands{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
+}
+
+.strandCard{
+  background:#BCBBB1;
+  padding:15px;
+  border-radius:8px;
+}
+
+/* EVENTS GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+}
+
+.gallery img{
+  width:00%;
+  border-radius:8px;
+}
+
+/* FOOTER */
+footer{
+  background:#000000;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+</style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+  <div class="authBox">
+    <h2>Login to RNHS Portal</h2>
+    <input type="text" id="loginName" placeholder="Full Name"><br>
+    <input type="password" id="loginPass" placeholder="Password"><br>
+    <button onclick="login()">Login</button>
+    <p id="loginError" style="color:red;"></p>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" style="display:none;">
+
+<nav>
+  <button onclick="showSection('home')">HOME</button>
+  <button onclick="showSection('vision')">VISION & MISSION</button>
+  <button onclick="showSection('strands')">STRANDS</button>
+  <button onclick="showSection('events')">EVENTS</button>
+  <button onclick="showSection('contact')">CONTACT</button>
+  <button id="logoutBtn" onclick="logout()">LOG OUT</button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="active">
+  <div class="card hero">
+    <img src="/1769488696275_1.jpg" alt="School building">
+    <h2>Welcome,</h2>
+    <p>This is Rosales National High School Student Portal.</p>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section id="vision">
+  <div class="card">
+    <h2>Vision</h2>
+    <p>To be an institution of excellence in academics, values formation, leadership, and community involvement.</p>
+    <h2>Mission</h2>
+    <p>To deliver quality education that encourages responsible, disciplined, and well-rounded learners.</p>
+  </div>
+</section>
+
+<!-- STRANDS -->
+<section id="strands">
+  <div class="card">
+    <h2>Senior High School Strands</h2>
+    <div class="strands">
+      <div class="strandCard"><h3>STEM</h3><p>Science, Technology, Engineering, Mathematics</p></div>
+      <div class="strandCard"><h3>ABM</h3><p>Accountancy, Business, Management</p></div>
+      <div class="strandCard"><h3>HUMSS</h3><p>Humanities and Social Sciences</p></div>
+      <div class="strandCard"><h3>TVL</h3><p>Technical-Vocational Livelihood</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section id="events">
+  <div class="card">
+    <h2>School Events</h2>
+      <img src="/1773125855579.jpg" alt="Event 1">
+      <img src="/1773125872418.jpg" alt="Event 2">
+      <img src="/1773125836885.jpg" alt="Event 3">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="card">
+    <h2>Contact Information</h2>
+    <p><b>Address:
+   </b> 📍Rosales National High School, Rosales, Pangasinan</p>
+    <p><b>Phone:</b> (075) 582-3376</p>
+    <p><b>Email:</b> julienesperos9@gmail.com</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Rosales National High School Student Portal</p>
+</footer>
+
+<script>
+// LOGIN FUNCTION
+function login(){
+  let name = document.getElementById("loginName").value;
+  let pass = document.getElementById("loginPass").value;
+  if(name === "Julie Ann Marie M. Nespeos" && pass === "RNHS2026"){
+    document.getElementById("loginPage").style.display="none";
+    document.getElementById("mainContent").style.display="block";
+  } else{
+    document.getElementById("loginError").innerText="Incorrect login details";
+  }
+}
+
+// LOGOUT FUNCTION
+function logout(){
+  document.getElementById("mainContent").style.display="none";
+  document.getElementById("loginPage").style.display="flex";
+  document.getElementById("loginName").value="";
+  document.getElementById("loginPass").value="";
+  document.getElementById("loginError").innerText="";
+}
+
+// SECTION SWITCH
+function showSection(sectionId){
+  const sections = document.querySelectorAll("section");
+  sections.forEach(sec => sec.classList.remove("active"));
+  document.getElementById(sectionId).classList.add("active");
+}
+</script>
+
+</body>
+</html>
